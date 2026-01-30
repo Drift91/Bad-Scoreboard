@@ -22,7 +22,7 @@ Citizen.CreateThread(function()
 	nui = false;
 	local col = true;
 	while true do 
-		Wait(1);
+		Wait(0);
 		if IsControlPressed(0, key) then 
 			if not nui then 
 				local left = "";
