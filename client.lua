@@ -110,35 +110,7 @@ avatarss = {}
 pingss = {}
 playerNames = {}
 discordNames = {}
-RegisterNetEvent('Bad-ServerList:DiscordUpdate')
-AddEventHandler('Bad-ServerList:DiscordUpdate', function(players)
-	discordNames = {};
-	for id, discordName in pairs(players) do 
-		--print("[" .. id .. "] Avatar == " .. ava)
-		discordNames[id] = discordName;
-	end
-end)
-RegisterNetEvent('Bad-ServerList:PlayerUpdate')
-AddEventHandler('Bad-ServerList:PlayerUpdate', function(players)
-	playerNames = {};
-	for id, playerName in pairs(players) do 
-		--print("[" .. id .. "] Avatar == " .. ava)
-		playerNames[id] = playerName;
-	end
-end)
-RegisterNetEvent('Bad-ServerList:PingUpdate')
-AddEventHandler('Bad-ServerList:PingUpdate', function(pingList)
-	pingss = {};
-	for id, ping in pairs(pingList) do 
-		--print("[" .. id .. "] Avatar == " .. ava)
-		pingss[id] = ping;
-	end
-end)
-RegisterNetEvent('Bad-ServerList:ClientUpdate')
-AddEventHandler('Bad-ServerList:ClientUpdate', function(avas)
-	avatarss = {};
-	for id, ava in pairs(avas) do 
-		--print("[" .. id .. "] Avatar == " .. ava)
-		avatarss[id] = ava;
-	end
+
+RegisterNetEvent('Bad-ServerList:Update', function(players, pings, avatarIDs, discords)
+	playerNames, pingss, avatarss, discordNames = players, pings, avatarIDs, discords
 end)

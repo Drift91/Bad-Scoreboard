@@ -76,10 +76,7 @@ Citizen.CreateThread(function()
                 discords[id] = Config.Discord_Not_Found;
             end
         end
-        TriggerClientEvent('Bad-ServerList:PlayerUpdate', -1, players)
-        TriggerClientEvent('Bad-ServerList:PingUpdate', -1, pings)
-        TriggerClientEvent('Bad-ServerList:ClientUpdate', -1, avatarIDs)
-        TriggerClientEvent('Bad-ServerList:DiscordUpdate', -1, discords)
+        TriggerLatentClientEvent('Bad-ServerList:Update', -1, -1, players, pings, avatarIDs, discords)
     end
 end)
 
